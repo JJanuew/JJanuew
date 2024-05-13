@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parfüm Samples</title>
+    <style>
+        /* CSS-Stile hier einfügen */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Willkommen bei Parfüm Samples</h1>
+    </header>
+    <main>
+        <div class="perfume-container">
+            <div class="perfume" onclick="selectPerfume('Perfume1')">
+                <img src="perfume1.jpg" alt="Perfume 1">
+                <h2>Perfume 1</h2>
+            </div>
+            <div class="perfume" onclick="selectPerfume('Perfume2')">
+                <img src="perfume2.jpg" alt="Perfume 2">
+                <h2>Perfume 2</h2>
+            </div>
+            <!-- Weitere Parfümoptionen hier einfügen -->
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Parfüm Samples</p>
+    </footer>
+    <script>
+        function selectPerfume(perfumeName) {
+            window.location.href = 'perfume.html?name=' + encodeURIComponent(perfumeName);
+        }
+    </script>
+</body>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfume 1</title>
+    <style>
+        /* CSS-Stile hier einfügen */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Perfume 1</h1>
+    </header>
+    <main>
+        <img src="perfume1.jpg" alt="Perfume 1">
+        <h2>Menge wählen:</h2>
+        <select id="ml" name="ml" onchange="updatePrice()">
+            <option value="1">1 ml</option>
+            <option value="2">2 ml</option>
+            <option value="5">5 ml</option>
+        </select>
+        <h3>Gesamtpreis: $<span id="total-price">5.99</span></h3>
+        <button onclick="addToCart()">In den Warenkorb legen</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 Parfüm Samples</p>
+    </footer>
+    <script>
+        function updatePrice() {
+            var ml = document.getElementById('ml').value;
+            var pricePerMl = getPricePerMl(); // Funktion, die den Preis pro ml zurückgibt
+            var totalPrice = ml * pricePerMl;
+            document.getElementById('total-price').innerText = totalPrice.toFixed(2);
+        }
+
+        function getPricePerMl() {
+            // Funktion, die den Preis pro ml für dieses Parfüm zurückgibt
+            return 5.99; // Beispielwert
+        }
+
+        function addToCart() {
+            var ml = document.getElementById('ml').value;
+            var totalPrice = parseFloat(document.getElementById('total-price').innerText);
+            // Hier den Warenkorb hinzufügen oder andere gewünschte Aktionen durchführen
+            alert(ml + ' ml Parfüm wurde zum Warenkorb hinzugefügt. Gesamtpreis: $' + totalPrice.toFixed(2));
+        }
+    </script>
+</body>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warenkorb</title>
+    <style>
+        /* CSS-Stile hier einfügen */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Warenkorb</h1>
+    </header>
+    <main>
+        <!-- Warenkorb-Inhalt hier einfügen -->
+    </main>
+    <footer>
+        <p>&copy; 2024 Parfüm Samples</p>
+    </footer>
+</body>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bezahlen</title>
+    <style>
+        /* CSS-Stile hier einfügen */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bezahlen</h1>
+    </header>
+    <main>
+        <!-- Bezahlinformationen und Formular hier einfügen -->
+    </main>
+    <footer>
+        <p>&copy; 2024 Parfüm Samples</p>
+    </footer>
+</body>
+</html>
